@@ -47,7 +47,7 @@ def getTransfers(amount, timestamp):
         raise Exception("Query failed to run by returning code of {}. {}".format(request.status_code, query))
 
 def action():
-    timestamp = time.time() - INTERVAL_IN_SECONDS
+    timestamp = time.time() - INTERVAL_IN_SECONDS - 20
     transfers_data = getTransfers(AMOUNT_MIN, timestamp)
     transfers_data = transfers_data['data']['transfers']
     print(time.time())
